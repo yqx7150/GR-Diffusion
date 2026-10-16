@@ -1,0 +1,29 @@
+Dataset/
+IDDPM_2D/
+Metrics_eval/
+MPRNet/
+r2_gaussian/
+UNet/
+UNet_3D/
+ViT/
+x2-gaussian/
+annotator.html
+
+# 忽略Python编译缓存文件夹
+__pycache__/
+
+# 忽略指定业务文件夹（asset/output/model_space）
+asset/
+output/
+model_space/
+
+# 忽略指定后缀的所有文件（全目录生效）
+*.png
+*.npy
+*.ckpt
+*.bin
+*.pt
+
+# 忽略指定文件
+DDPM_3D/ajwoidnmaslkf.py
+DDPM_3D/apply_mask.py

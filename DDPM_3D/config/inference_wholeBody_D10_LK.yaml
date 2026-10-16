@@ -1,0 +1,49 @@
+save_dir: ./output/D10_LK
+
+num_samples: 6
+batch_size: 1
+base_samples: "../Dataset/Dicom/LK/D10"
+base_file_type: "dcm"
+cond_samples: "../DGR/output/D10_LK/recon_432x256x256.npy"
+cond_file_type: "npy"
+
+model_path: ./model_space/model.pt
+cond_fn_type: gaussian_and_mae
+cond_kwargs: 
+  kernels: 
+    - 3
+    - 3
+    - 3
+  sigmas: 
+    - 1.0
+    - 2.0
+    - 4.0
+  guided_scale1: 1
+  guided_scale2: 1
+
+cond_indeces_type: single_range
+conda_indeces_kwargs: 
+  lower_bound: 400
+  higher_bound: 600
+
+large_size: 96
+small_size: 96
+num_channels: 128
+num_res_blocks: 2
+num_heads: 4
+num_heads_upsample: -1
+num_head_channels: 64
+attention_resolutions: "1000"
+dropout: 0.0
+resblock_updown: True
+rescale_learned_sigmas: False
+learn_sigma: True
+class_cond: False
+use_scale_shift_norm: True
+use_checkpoint: False
+use_fp16: True
+
+diffusion_steps: 1000
+rescale_timesteps: False
+noise_schedule: "linear"
+clip_denoised: True

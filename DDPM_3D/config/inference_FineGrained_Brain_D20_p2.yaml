@@ -1,0 +1,41 @@
+save_dir: ./output/D20_p2_Fine_brain
+
+num_samples: 1
+batch_size: 1
+base_samples: ../Dataset/Dicom/Anonymous_ANO_20230626_1601550_092415/D20
+base_file_type: dcm
+cond_samples: ../DGR/output/D20_p2/recon_673x360x360.npy
+cond_file_type: npy
+slice_start: 84
+slice_end: 180
+
+model_path: ./model_space/model.pt
+cond_fn_type: low_res_mae
+
+cond_indeces_type: single_range
+conda_indeces_kwargs: 
+  lower_bound: 400
+  higher_bound: 600
+
+large_size: 96
+small_size: 96
+num_channels: 128
+num_res_blocks: 2
+num_heads: 4
+num_heads_upsample: -1
+num_head_channels: 64
+attention_resolutions: "1000"
+dropout: 0.0
+resblock_updown: True
+rescale_learned_sigmas: False
+learn_sigma: True
+class_cond: False
+use_scale_shift_norm: True
+use_checkpoint: False
+use_fp16: True
+
+acc_timesteps: 965
+diffusion_steps: 1000
+rescale_timesteps: False
+noise_schedule: linear
+clip_denoised: True

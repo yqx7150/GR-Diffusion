@@ -1,0 +1,31 @@
+save_dir: ./output/D4_LK_no_cond
+
+num_samples: 6
+batch_size: 1
+base_samples: "../Dataset/Dicom/LK/D4"
+base_file_type: "dcm"
+
+model_path: ./model_space/model.pt
+
+large_size: 96
+small_size: 96
+num_channels: 128
+num_res_blocks: 2
+num_heads: 4
+num_heads_upsample: -1
+num_head_channels: 64
+attention_resolutions: "1000"
+dropout: 0.0
+resblock_updown: True
+rescale_learned_sigmas: False
+learn_sigma: True
+class_cond: False
+use_scale_shift_norm: True
+use_checkpoint: False
+use_fp16: True
+
+acc_timesteps: 950
+diffusion_steps: 1000
+rescale_timesteps: False
+noise_schedule: "linear"
+clip_denoised: True
